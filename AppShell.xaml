@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:foodsharing.Views"
+       Title="foodsharing"
+       x:Class="foodsharing.AppShell">
+
+    
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#F7F7F7" />
+                <Setter Property="Shell.ForegroundColor" Value="#E3A717" />
+                <Setter Property="Shell.TitleColor" Value="#676767" />
+                <Setter Property="Shell.DisabledColor" Value="#9B9B9B" />
+                <Setter Property="Shell.UnselectedColor" Value="#9B9B9B" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#F7F7F7" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#9B9B9B"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#E3A717"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        <ShellContent Route="RegistrationPage" ContentTemplate="{DataTemplate local:RegistrationPage}" />
+    </TabBar>
+    
+    <TabBar>
+        <ShellContent Title="Главная" Icon="main_icon@4x.png" Route="PostsPage" ContentTemplate="{DataTemplate local:PostsPage}" />
+        <ShellContent Title="Создать" Icon="post@4x.png" Route="NewPostPage" ContentTemplate="{DataTemplate local:NewPostPage}"/>
+        <ShellContent Title="Профиль" Icon="profile@4x.png" Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}"/>
+    </TabBar>
+
+</Shell>
+

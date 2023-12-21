@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="foodsharing.Views.ProfilePage"
+             Title="Профиль">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#EAEAEA" Padding="20">
+
+                <StackLayout Padding="105,0">
+                    <Frame HasShadow="False"
+                           CornerRadius="87"
+                           HeightRequest="175"
+                           Padding="0"
+                           IsClippedToBounds="True"
+                           BackgroundColor="White">
+
+                        <Image Source="{Binding MediaPath}" Aspect="AspectFill"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Padding="105,0">
+                    <Button Text="Сменить фото"
+                            TextColor="#676767"
+                            WidthRequest="50"
+                            BackgroundColor="Transparent"
+                            HeightRequest="30"
+                            Command="{Binding PickImage}"/>
+                </StackLayout>
+
+                <StackLayout Padding="0,15,0,6">
+                    <Label Text="Имя и Фамилия" FontSize="Small" TextColor="#676767"/>
+                    <Entry Text="{Binding FLname, Mode=TwoWay}" TextColor="Black" BackgroundColor="White"/>
+                </StackLayout>
+
+                <StackLayout Padding="0,6">
+                    <Label Text="Номер телефона" FontSize="Small" TextColor="#676767"/>
+                    <Entry Text="{Binding PhoneNumber, Mode=TwoWay}" TextColor="Black" BackgroundColor="White"/>
+                </StackLayout>
+
+                <StackLayout Padding="0,6">
+                    <Label Text="Email" FontSize="Small" TextColor="#676767"/>
+                    <Entry Text="{Binding Email, Mode=TwoWay}" TextColor="Black" BackgroundColor="White"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Button Text="Выйти из аккаунта"
+                            BackgroundColor="Transparent"
+                            TextColor="#FF2E00"
+                            Command="{Binding ExitAccountCommand}"/>
+                </StackLayout>
+
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Button Text="Мои объявления"
+                            BackgroundColor="#E3A717"
+                            TextColor="White" CornerRadius="15"
+                            Command="{Binding GoToMyPostsCommand}"/>
+                </StackLayout>
+
+               
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

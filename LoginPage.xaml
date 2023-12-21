@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="foodsharing.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="#EAEAEA">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="20">
+                <Grid VerticalOptions="CenterAndExpand" RowSpacing="20">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                        <Image Source="logo2.png" Grid.Row="0"/>
+                   
+                    <Entry Placeholder="Логин"
+                           x:Name="EntryUser"
+                           Grid.Row="1" BackgroundColor="White"
+                           TextColor="Black"/>
+
+                    <Entry Placeholder="Пароль"
+                           x:Name="EntryPassword"
+                           IsPassword="True"
+                           Grid.Row="2" BackgroundColor="White"
+                           TextColor="Black"/>
+                    
+                    <Button Clicked="Button_Clicked_1"
+                            Text="Войти"
+                            Grid.Row="3"
+                            BackgroundColor="#E3A717"
+                            TextColor="White"
+                            CornerRadius="15"/>
+
+                    <Grid Grid.Row="4">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Text= "Зарегистрируйтесь!"
+                                BackgroundColor="Transparent"
+                                TextColor="#EA9A01"
+                                HeightRequest="5" Grid.Column="1"
+                                HorizontalOptions="StartAndExpand"
+                                Clicked="Button_Clicked"/>
+                        <Label Text="Еще нет аккаунта?"
+                               TextColor="#676767" FontSize="15"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="EndAndExpand"/>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="foodsharing.Views.PostDetail">
+
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#EAEAEA">
+            <StackLayout Spacing="10" Padding="15">
+
+                <Frame HasShadow="False"
+                       CornerRadius="15"
+                       HeightRequest="270"
+                       IsClippedToBounds="True"
+                       Padding="0">
+                    <Image Source="{Binding ImageUrl}" Aspect="AspectFill"/>
+                </Frame>
+                
+                <Frame HasShadow="False"
+                       CornerRadius="15"
+                       BackgroundColor="White" >
+                    <StackLayout>
+                        <Label Text="{Binding PostName}" FontSize="Title" TextColor="#1F1F1F"/>
+                        <Label Text="{Binding Description}" FontSize="Default" TextColor="Black"/>                      
+                     </StackLayout>
+                 </Frame>
+
+                <Frame HasShadow="False"
+                       CornerRadius="15"
+                       BackgroundColor="White">
+                    <StackLayout>
+                        <Label Text="Контакты:" FontAttributes="Bold" TextColor="#1F1F1F"/>
+                        <Label Text="{Binding UserName}" FontSize="Default" TextColor="Black"/>
+                        <Label Text="{Binding PhoneNumber}" FontSize="Default" TextColor="Black"/>
+                        <Label Text="{Binding Adress}" FontSize="Default" TextColor="Black"/> 
+                    </StackLayout>
+                </Frame>
+                <Button Text="Позвонить"
+                        Command="{Binding DialCommand}"
+                        CornerRadius="15"
+                        TextColor="White"
+                        BackgroundColor="#E3A717"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

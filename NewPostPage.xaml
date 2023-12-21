@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="foodsharing.Views.NewPostPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Новое объявление"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+
+    <ScrollView BackgroundColor="#EAEAEA">
+        <StackLayout Spacing="20" Padding="20" >
+            
+            <StackLayout Spacing="20" Orientation="Horizontal">           
+
+                <Frame HasShadow="False"
+                           WidthRequest="300"
+                           HeightRequest="300"
+                           Padding="0"
+                           IsClippedToBounds="True"
+                           CornerRadius="15" BackgroundColor="White">
+
+                        <Image Source="{Binding MediaPath}" Aspect="AspectFill"/>
+                    
+                </Frame>
+
+                <Frame WidthRequest="50"
+                           HasShadow="False"
+                           CornerRadius="15" BackgroundColor="White">
+                        <ImageButton Source="attach.png"
+                                     Command="{Binding PickImage}"/>
+
+                </Frame>
+            </StackLayout>
+                 
+            <Entry Text="{Binding PostName, Mode=TwoWay}"
+                       FontSize="Medium"
+                       Placeholder="Название"
+                       PlaceholderColor="#676767"
+                       ClearButtonVisibility="WhileEditing"
+                       HeightRequest="40"
+                       BackgroundColor="White"
+                       TextColor="Black"/>
+                
+            <Frame CornerRadius="4"
+                   HasShadow="False"
+                   Padding="0"
+                   BackgroundColor="White">
+
+                <Editor Text="{Binding Description, Mode=TwoWay}"
+                        AutoSize="TextChanges"
+                        FontSize="Medium" TextColor="Black"
+                        Margin="0" Placeholder="Описание"
+                        PlaceholderColor="#676767"
+                        HeightRequest="100"
+                        BackgroundColor="Transparent"/>
+            </Frame>
+
+            <Entry Text="{Binding UserName, Mode=TwoWay}"
+                   FontSize="Medium" TextColor="Black"
+                   Placeholder="Ваше имя"
+                   PlaceholderColor="#676767"
+                   ClearButtonVisibility="WhileEditing"
+                   HeightRequest="40"
+                   BackgroundColor="White"/>
+
+            <Entry Text="{Binding PhoneNumber, Mode=TwoWay}"
+                   FontSize="Medium" TextColor="Black"
+                   Placeholder="Номер телефона"
+                   PlaceholderColor="#676767"
+                   Keyboard="Telephone"
+                   ClearButtonVisibility="WhileEditing"
+                   HeightRequest="40" BackgroundColor="White"/>
+
+            <Entry Text="{Binding Adress, Mode=TwoWay}"
+                   FontSize="Medium" TextColor="Black"
+                   Placeholder="Адрес"
+                   PlaceholderColor="#676767"
+                   ClearButtonVisibility="WhileEditing"
+                   HeightRequest="40" BackgroundColor="White"/>
+
+            <StackLayout >
+                <Button Text="Опубликовать"
+                        Command="{Binding SaveCommand}"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="#E3A717"
+                        TextColor="White"
+                        CornerRadius="15">
+                </Button>                               
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
